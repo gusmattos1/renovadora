@@ -2,8 +2,6 @@ import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import { Footer } from './Footer';
-import { Header } from './Header';
 
 const useStyles = makeStyles((theme) => ({}));
 
@@ -63,9 +61,7 @@ const QuemSomos = () => {
   return (
     <div className={classes.root}>
       <div style={{ width: '100%', height: '100%' }}>
-        <Header />
         <Body classes={classes} />
-        <Footer />
       </div>
     </div>
   );

@@ -2,8 +2,6 @@ import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import { Footer } from './Footer';
-import { Header } from './Header';
 import Gallery from 'react-photo-gallery';
 import foto1 from '../fotos/reduzidas/foto-1.jpg';
 import foto2 from '../fotos/reduzidas/foto-2.jpg';
@@ -54,6 +52,11 @@ const Galeria = () => {
   ];
 
   const Body = ({ classes }) => {
+    const handleOnDragStart = (e) => e.preventDefault()
+   const responsive = {
+      0: { items: 1 },
+      1024: { items: 2 },
+    }
     return (
       <Container>
         <h3 style={{ textAlign: 'center', marginTop: 40, fontSize: 26 }}>
@@ -67,9 +70,7 @@ const Galeria = () => {
   return (
     <div className={classes.root}>
       <div style={{ width: '100%', height: '100%' }}>
-        <Header />
         <Body classes={classes} />
-        <Footer />
       </div>
     </div>
   );

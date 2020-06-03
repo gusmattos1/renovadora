@@ -5,6 +5,8 @@ export const Footer = () => {
     <div
       style={{
         width: '100%',
+        maxWidth: 1600,
+        margin: 'auto',
         height: 65,
         background: '#308654',
         textAlign: 'center',

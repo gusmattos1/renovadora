@@ -42,13 +42,13 @@ export const Header = () => {
     <Grid
       container
       spacing={3}
-      style={{ backgroundColor: '#F8F8F8', width: '100%', margin: 0 }}
+      style={{ backgroundColor: '#F8F8F8', width: '100%', margin: 0, maxWidth:1600, margin:'auto' }}
     >
-      <Grid item xs={5} sm={3}>
+      <Grid item xs={5} sm={3} style={{ display: 'flex', justifyContent: 'center' }}>
         <img
           src={Logo}
           alt="logo"
-          style={{ maxWidth: '100%', height: 'auto' }}
+          style={{ maxWidth: 300, height: 'auto' }}
         />
       </Grid>
       <Grid item sm={6}>
@@ -68,7 +68,7 @@ export const Header = () => {
             <li style={{ marginLeft: 20 }}>
               <p className={classes.listText}>FUNILARIA E PINTURA</p>
             </li>
-          </ul>{' '}
+          </ul>
           <ul
             style={{
               color: '#FF5B28',
@@ -115,7 +115,7 @@ export const Header = () => {
             <img
               src={WhatsIcon}
               alt="whatsapp icon"
-              style={{ maxWidth: '100%', height: 'auto' }}
+              style={{ maxWidth: 300, height: 'auto' }}
             />
           </a>
         </div>

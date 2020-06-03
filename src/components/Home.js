@@ -22,6 +22,8 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: '#F8F8F8',
+    maxWidth: '1600px',
+    margin: 'auto',
   },
   contatoLista: {
     display: 'flex',
@@ -56,21 +58,21 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Home = () => {
-  const [position, setPosition] = useState(0);
-
-  const updateCurrentSlide = (item) => {
-    console.log(item);
-    setPosition(item);
-  };
-
   const MyCarousel = ({ classes }) => {
+    const [position, setPosition] = useState(0);
+
+    const updateCurrentSlide = (item) => {
+      console.log(item);
+      setPosition(item);
+    };
+
     return (
       <Container>
         <h3 style={{ textAlign: 'center', marginTop: 40, fontSize: 26 }}>
           Nossos Serviços
         </h3>
         <Carousel
-          // autoPlay
+          autoPlay
           showThumbs={false}
           showStatus={false}
           infiniteLoop={false}
@@ -133,21 +135,33 @@ const Home = () => {
               }}
             >
               <div className={classes.contatoLista}>
-                <img
-                  style={{ marginRight: 25 }}
-                  src={TelefoneIcon}
-                  alt="icon"
-                />
-                (13) 3473-3683
+                <a
+                  href="tel:1334733683"
+                  style={{ color: 'black', display: 'flex' }}
+                >
+                  <img
+                    style={{ marginRight: 25 }}
+                    src={TelefoneIcon}
+                    alt="icon"
+                  />
+                  <p>(13) 3473-3683</p>
+                </a>
               </div>
               <div className={classes.contatoLista}>
-                <img style={{ marginRight: 25 }} src={EmailIcon} alt="icon" />
-                <p>wmrenovadoradeveiculos@bol.com.br</p>
+                <a
+                  href="mailto: wmrenovadoradeveiculos@bol.com.br"
+                  style={{ color: 'black', display: 'flex' }}
+                >
+                  <img style={{ marginRight: 25 }} src={EmailIcon} alt="icon" />
+                  <p>wmrenovadoradeveiculos@bol.com.br</p>
+                </a>
               </div>
               <div className={classes.contatoLista}>
                 <img style={{ marginRight: 25 }} src={HorarioIcon} alt="icon" />
-                <p>Seg-Sex: 9:00-18:00</p>
-                <p>Sab: 10:00-14:00</p>
+                <p>
+                  Seg-Sex: 08:00 - 18:00 <br />
+                  Sab: 09:00 - 12:00
+                </p>
               </div>
               <div className={classes.contatoLista}>
                 <img
@@ -280,11 +294,9 @@ const Home = () => {
   return (
     <div className={classes.root}>
       <div style={{ width: '100%', height: '100%' }}>
-        <Header />
         <MyCarousel classes={classes} />
         <Contato classes={classes} />
         <Form classes={classes} />
-        <Footer />
       </div>
     </div>
   );
