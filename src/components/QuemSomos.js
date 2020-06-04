@@ -17,9 +17,11 @@ const QuemSomos = () => {
   const myRef = useRef(null);
 
   useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo(0, myRef.current.offsetTop - 40);
-    }, 800);
+    if (myRef.current && myRef.current.offsetTop) {
+      setTimeout(() => {
+        window.scrollTo(0, myRef.current.offsetTop - 40);
+      }, 400);
+    }
   }, []);
 
   return (

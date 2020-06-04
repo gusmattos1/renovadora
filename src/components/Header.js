@@ -21,8 +21,16 @@ const useStyles = makeStyles((theme) => ({
   listText: {
     color: 'black',
     margin: 0,
+    fontSize: '28px',
+
+    [theme.breakpoints.down('md')]: {
+      fontSize: '24px',
+    },
     [theme.breakpoints.down('sm')]: {
-      fontSize: '0.6em',
+      fontSize: '18px',
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '14px',
     },
   },
   link: {
@@ -42,84 +50,103 @@ export const Header = () => {
     <Grid
       container
       spacing={3}
-      style={{ backgroundColor: '#F8F8F8', width: '100%', maxWidth:1600, margin:'auto' }}
+      style={{
+        backgroundColor: '#F8F8F8',
+        width: '100%',
+        maxWidth: 1600,
+        margin: 'auto',
+      }}
     >
-      <Grid item xs={5} sm={3} style={{ display: 'flex', justifyContent: 'center' }}>
-        <img
-          src={Logo}
-          alt="logo"
-          style={{ maxWidth: 300, height: 'auto' }}
-        />
-      </Grid>
-      <Grid item sm={6}>
-        <div className={classes.list}>
-          <ul
-            style={{
-              color: '#FF5B28',
-              padding: 0,
-              fontSize: '24px',
-              listStyleType: 'square',
-              lineHeight: '40px',
-            }}
-          >
-            <li style={{ marginLeft: 0 }}>
-              <p className={classes.listText}>MECANICA</p>
-            </li>
-            <li style={{ marginLeft: 20 }}>
-              <p className={classes.listText}>FUNILARIA E PINTURA</p>
-            </li>
-          </ul>
-          <ul
-            style={{
-              color: '#FF5B28',
-              fontSize: '24px',
-              padding: 0,
-              listStyleType: 'square',
-              lineHeight: '40px',
-            }}
-          >
-            <li style={{ marginLeft: 40 }}>
-              <p className={classes.listText}>REPAROS RAPIDOS</p>
-            </li>
-            <li style={{ marginLeft: 60 }}>
-              <p className={classes.listText}>SINISTROS</p>
-            </li>
-          </ul>
-        </div>
-      </Grid>
-      <Grid item xs={5} sm={3}>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: '100%',
-            height: '100%',
-          }}
+      <div
+        style={{
+          display: 'flex',
+          width: '100%',
+          justifyContent: 'space-evenly',
+        }}
+      >
+        <Grid
+          item
+          xs={5}
+          sm={3}
+          style={{ display: 'flex', justifyContent: 'center', maxWidth: 250 }}
         >
-          <a
-            href="https://whats.link/wmrenovadora"
-            alt="whatslink"
-            target="_blank"
-            rel="noopener noreferrer"
+          <img
+            src={Logo}
+            alt="logo"
+            style={{ maxWidth: '160px', height: 'auto', margin: 20 }}
+          />
+        </Grid>
+        <Grid item sm={6}>
+          <div className={classes.list}>
+            <ul
+              style={{
+                color: '#FF5B28',
+                padding: 0,
+                fontSize: '24px',
+                listStyleType: 'square',
+                lineHeight: '40px',
+              }}
+            >
+              <li style={{ marginLeft: 0 }}>
+                <p className={classes.listText}>MECANICA</p>
+              </li>
+              <li style={{ marginLeft: 20 }}>
+                <p className={classes.listText}>FUNILARIA E PINTURA</p>
+              </li>
+            </ul>
+            <ul
+              style={{
+                color: '#FF5B28',
+                fontSize: '24px',
+                padding: 0,
+                listStyleType: 'square',
+                lineHeight: '40px',
+              }}
+            >
+              <li style={{ marginLeft: 40 }}>
+                <p className={classes.listText}>REPAROS RAPIDOS</p>
+              </li>
+              <li style={{ marginLeft: 60 }}>
+                <p className={classes.listText}>SINISTROS</p>
+              </li>
+            </ul>
+          </div>
+        </Grid>
+        <Grid item xs={5} sm={3}>
+          <div
             style={{
               display: 'flex',
-              justifyContent: 'center',
               alignItems: 'center',
-              textAlign: 'center',
-              flexDirection: 'column',
-              color: 'white',
-              textDecoration: 'none',
+              justifyContent: 'center',
+              width: '100%',
+              height: '100%',
             }}
           >
-            <img
-              src={WhatsIcon}
-              alt="whatsapp icon"
-              style={{ maxWidth: 300, height: 'auto' }}
-            />
-          </a>
-        </div>
-      </Grid>
+            <a
+              href="https://whats.link/wmrenovadora"
+              alt="whatslink"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+                flexDirection: 'column',
+                color: 'white',
+                textDecoration: 'none',
+                maxWidth: 250,
+              }}
+            >
+              <img
+                src={WhatsIcon}
+                alt="whatsapp icon"
+                style={{ maxWidth: '100%', height: 'auto' }}
+              />
+            </a>
+          </div>
+        </Grid>
+      </div>
 
       <img
         src={fachada}

@@ -60,9 +60,11 @@ const Galeria = () => {
   const classes = useStyles();
 
   useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo(0, myRef.current.offsetTop - 40);
-    }, 800);
+    if (myRef.current && myRef.current.offsetTop) {
+      setTimeout(() => {
+        window.scrollTo(0, myRef.current.offsetTop - 40);
+      }, 400);
+    }
   }, []);
 
   return (
@@ -78,7 +80,9 @@ const Galeria = () => {
         >
           Galeria
         </h3>
-        <Gallery photos={fotos} />
+        <div style={{ minHeight: 800 }}>
+          <Gallery photos={fotos} />
+        </div>
       </Container>
     </div>
   );
