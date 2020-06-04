@@ -42,7 +42,7 @@ export const Header = () => {
     <Grid
       container
       spacing={3}
-      style={{ backgroundColor: '#F8F8F8', width: '100%', margin: 0, maxWidth:1600, margin:'auto' }}
+      style={{ backgroundColor: '#F8F8F8', width: '100%', maxWidth:1600, margin:'auto' }}
     >
       <Grid item xs={5} sm={3} style={{ display: 'flex', justifyContent: 'center' }}>
         <img

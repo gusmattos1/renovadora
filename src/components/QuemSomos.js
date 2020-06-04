@@ -1,24 +1,45 @@
 import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+    backgroundColor: '#F8F8F8',
+    maxWidth: '1600px',
+    margin: 'auto',
+  },
+}));
 
 const QuemSomos = () => {
   const classes = useStyles();
+  const myRef = useRef(null);
 
-  const Body = ({ classes }) => {
-    return (
-      <Container>
-        <h3 style={{ textAlign: 'center', marginTop: 40, fontSize: 26 }}>
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo(0, myRef.current.offsetTop - 40);
+    }, 800);
+  }, []);
+
+  return (
+    <div className={classes.root}>
+      <Container ref={myRef}>
+        <h3
+          style={{
+            textAlign: 'center',
+            marginTop: 0,
+            paddingTop: 40,
+            fontSize: 26,
+          }}
+        >
           Quem Somos
         </h3>
 
         <video
           src="https://res.cloudinary.com/drgj9p6uh/video/upload/v1590954314/video-pronto-alta-qualidade_qd5wx2.mp4"
           controls
-          autoplay
+          autoPlay
           style={{ width: '100%' }}
         />
 
@@ -55,14 +76,6 @@ const QuemSomos = () => {
           </p>
         </div>
       </Container>
-    );
-  };
-
-  return (
-    <div className={classes.root}>
-      <div style={{ width: '100%', height: '100%' }}>
-        <Body classes={classes} />
-      </div>
     </div>
   );
 };

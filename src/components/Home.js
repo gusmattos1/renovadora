@@ -15,8 +15,6 @@ import map from '../assets/map.png';
 import Funilaria from '../fotos/funilaria.png';
 import Mecanica from '../fotos/mecanica.png';
 import Sinistro from '../fotos/sinistro.png';
-import { Footer } from './Footer';
-import { Header } from './Header';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,7 +66,7 @@ const Home = () => {
 
     return (
       <Container>
-        <h3 style={{ textAlign: 'center', marginTop: 40, fontSize: 26 }}>
+        <h3 style={{ textAlign: 'center', marginTop: 0, paddingTop:40, fontSize: 26 }}>
           Nossos Serviços
         </h3>
         <Carousel
