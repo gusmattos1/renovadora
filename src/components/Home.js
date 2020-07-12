@@ -66,7 +66,14 @@ const Home = () => {
 
     return (
       <Container>
-        <h3 style={{ textAlign: 'center', marginTop: 0, paddingTop:40, fontSize: 26 }}>
+        <h3
+          style={{
+            textAlign: 'center',
+            marginTop: 0,
+            paddingTop: 40,
+            fontSize: 26,
+          }}
+        >
           Nossos Serviços
         </h3>
         <Carousel

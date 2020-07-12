@@ -66,15 +66,14 @@ const QuemSomos = () => {
           <p>
             <span style={{ fontWeight: 'bold' }}>Missão: </span> Oferecer com
             qualidade a prestação de seus serviços, focado na qualidade e no bom
-            atendimento que sempre fizeram do Centro Automotivo General uma
-            empresa de destaque em Sorocaba e região.
+            atendimento.
           </p>
           <p>
             <span style={{ fontWeight: 'bold' }}>Valores: </span> Para atingir
             os objetivos principais da empresa, qualidade nos produtos e bom
-            atendimento, o Centro Automotivo General preserva um ótimo
-            relacionamento com seus clientes, através de muita integridade,
-            compromisso, desempenho, respeito ao empregado e trabalho em equipe.
+            atendimento, a WM Renovadora preserva um ótimo relacionamento com
+            seus clientes, através de muita integridade, compromisso,
+            desempenho, respeito ao empregado e trabalho em equipe.
           </p>
         </div>
       </Container>
