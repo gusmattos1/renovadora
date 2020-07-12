@@ -12,8 +12,8 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/quem_somos" component={QuemSomos} />
-          <Route exact path="/galeria" component={Galeria} />
+          <Route path="/quem_somos" component={QuemSomos} />
+          <Route path="/galeria" component={Galeria} />
         </Switch>
         <Footer />
       </Suspense>

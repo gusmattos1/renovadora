@@ -215,7 +215,11 @@ const Home = () => {
       <div className={classes.paper}>
         <Container style={{ maxWidth: 450 }}>
           <h2 style={{ textAlign: 'center' }}>Fale Conosco</h2>
-          <form className={classes.form} onSubmit={sendEmail}>
+          <form
+            className={classes.form}
+            onSubmit={sendEmail}
+            data-netlify="true"
+          >
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
