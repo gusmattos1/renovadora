@@ -1,8 +1,9 @@
-import Grid from '@material-ui/core/Grid';
-import React from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+
+import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/Logo.png';
+import React from 'react';
 import WhatsIcon from '../assets/whatsapp.png';
 import fachada from '../fotos/fachada.png';
 import { makeStyles } from '@material-ui/core/styles';
@@ -28,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.down('sm')]: {
       fontSize: '18px',
+      fontWeight: 'bold',
     },
     [theme.breakpoints.down('xs')]: {
       fontSize: '14px',
@@ -53,7 +55,6 @@ export const Header = () => {
       style={{
         backgroundColor: '#F8F8F8',
         width: '100%',
-        maxWidth: 1600,
         margin: 'auto',
       }}
     >
@@ -91,7 +92,7 @@ export const Header = () => {
                 <p className={classes.listText}>MECANICA</p>
               </li>
               <li style={{ marginLeft: 20 }}>
-                <p className={classes.listText}>FUNILARIA E PINTURA</p>
+                <p className={classes.listText}>SINISTROS</p>
               </li>
             </ul>
             <ul
@@ -107,7 +108,7 @@ export const Header = () => {
                 <p className={classes.listText}>REPAROS RAPIDOS</p>
               </li>
               <li style={{ marginLeft: 60 }}>
-                <p className={classes.listText}>SINISTROS</p>
+                <p className={classes.listText}>FUNILARIA E PINTURA</p>
               </li>
             </ul>
           </div>
@@ -150,7 +151,7 @@ export const Header = () => {
 
       <img
         src={fachada}
-        style={{ maxWidth: '100%', height: 'auto' }}
+        style={{ width: '100%', height: 'auto' }}
         alt="fachada"
       />
       {/* MENU */}

@@ -1,26 +1,27 @@
-import { Container } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import emailjs from 'emailjs-com';
-import React, { useState } from 'react';
-import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
-import HorarioIcon from '../assets/IconBusiness.svg';
+
+import React, { createRef, useState } from 'react';
+
+import Button from '@material-ui/core/Button';
+import { Carousel } from 'react-responsive-carousel';
+import { Container } from '@material-ui/core';
 import EmailIcon from '../assets/IconEmail.svg';
-import LocationIcon from '../assets/IconLocation.svg';
-import TelefoneIcon from '../assets/IconTelephone.svg';
-import map from '../assets/map.png';
 import Funilaria from '../fotos/funilaria.png';
+import Grid from '@material-ui/core/Grid';
+import HorarioIcon from '../assets/IconBusiness.svg';
+import LocationIcon from '../assets/IconLocation.svg';
 import Mecanica from '../fotos/mecanica.png';
 import Sinistro from '../fotos/sinistro.png';
+import TelefoneIcon from '../assets/IconTelephone.svg';
+import TextField from '@material-ui/core/TextField';
+import emailjs from 'emailjs-com';
+import { makeStyles } from '@material-ui/core/styles';
+import map from '../assets/map.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: '#F8F8F8',
-    maxWidth: '1600px',
     margin: 'auto',
   },
   contatoLista: {
@@ -40,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    paddingBottom: theme.spacing(3),
   },
   legendTest: {
     fontSize: '56px !important',
@@ -60,7 +62,6 @@ const Home = () => {
     const [position, setPosition] = useState(0);
 
     const updateCurrentSlide = (item) => {
-      console.log(item);
       setPosition(item);
     };
 
@@ -192,6 +193,8 @@ const Home = () => {
   };
 
   const Form = ({ classes }) => {
+    const formRef = createRef();
+
     const sendEmail = (e) => {
       e.preventDefault();
 
@@ -205,9 +208,16 @@ const Home = () => {
         .then(
           (result) => {
             console.log(result.text);
+            alert('Menssagem encaminhada com sucesso');
+            if (formRef.current) {
+              formRef.current.reset();
+            }
           },
           (error) => {
             console.log(error.text);
+            alert(
+              'Desculpe, aparentemente ocorreu um erro com este componente e não foi possível encaminhar sua mensagem.'
+            );
           }
         );
     };
@@ -219,6 +229,7 @@ const Home = () => {
             className={classes.form}
             onSubmit={sendEmail}
             data-netlify="true"
+            ref={formRef}
           >
             <Grid container spacing={2}>
               <Grid item xs={12}>
@@ -270,7 +281,7 @@ const Home = () => {
                   variant="outlined"
                   required
                   fullWidth
-                  name="assunto"
+                  name="menssagem"
                   label="Digite aqui sua menssagem..."
                   id="menssagem"
                 />

@@ -7,7 +7,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     backgroundColor: '#F8F8F8',
-    maxWidth: '1600px',
     margin: 'auto',
   },
 }));
@@ -58,10 +57,6 @@ const QuemSomos = () => {
             Óleo e Filtro, Troca de Correia, Injeção Eletrônica, Troca de
             Embreagem, Limpeza de Radiador, Bico Injetor, Alinhamento /
             Balanceamento.
-          </p>
-          <p>
-            Confira abaixo com mais detalhes os serviços de conserto ou reparo
-            de seu automóvel.
           </p>
           <p>
             <span style={{ fontWeight: 'bold' }}>Missão: </span> Oferecer com

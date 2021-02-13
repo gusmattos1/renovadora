@@ -5,7 +5,6 @@ export const Footer = () => {
     <div
       style={{
         width: '100%',
-        maxWidth: 1600,
         margin: 'auto',
         height: 65,
         background: '#308654',
@@ -14,7 +13,6 @@ export const Footer = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 50,
       }}
     >
       ©2020 por Mattos Design.
